@@ -1,0 +1,13 @@
+uses
+	Core;
+
+library
+	portaudio;
+
+file
+	AudioPackage.icpp,
+	AudioPackage.h;
+
+mainconfig
+	"" = "";
+
