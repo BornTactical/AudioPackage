@@ -2,7 +2,6 @@
 #define _AudioPackage_AudioPackage_h_
 #include <Core/Core.h>
 #include <portaudio.h>
-#include <pa_linux_alsa.h>
 
 namespace Upp {
     
@@ -110,7 +109,6 @@ public:
     AudioStream& SampleRate(int rate)             { sampleRate = rate; return *this; }
     AudioStream& FramesPerBuffer(int frameCount)  { framesPerBuffer = frameCount; return *this; }
     AudioStream& HostApiStreamInfo(void* apiInfo) { outputParameters.hostApiSpecificStreamInfo = apiInfo; return *this; }
-    AudioStream& EnableDolby()                    { PaAlsaStreamInfo streamInfo; return *this; }
     
     Event<void *, unsigned long> WhenRequest;
     PaSampleFormat SampleFormat() const { return outputParameters.sampleFormat; };
